@@ -1,0 +1,19 @@
+const axios = require('axios');
+
+const users = [
+  { id: '1', name: 'John Doe', email: 'john@example.com' },
+  { id: '2', name: 'Jane Smith', email: 'jane@example.com' },
+  // Add more sample users here
+];
+
+const resolvers = {
+  Query: {
+    getUser: async (_, { id }) => {
+      // Simulate fetching user data from an API
+      const user = users.find((u) => u.id === id);
+      return user;
+    },
+  },
+};
+
+module.exports = resolvers;
